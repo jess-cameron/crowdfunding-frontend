@@ -1,16 +1,16 @@
 async function getProjects() {
     const url =`${import.meta.env.VITE_API_URL}/projects`;
 
-    const response =awaitfetch(url,{method:"GET"});
+    const response =await fetch(url,{method:"GET"});
 
     if (!response.ok) {
         const fallbackError ="Error fetching projects";
-        const data =awaitresponse.json().catch(() => {
-            thrownewError(fallbackError);
+        const data = await response.json().catch(() => {
+            throw new Error(fallbackError);
         });
 
         const errorMessage = data?.detail?? fallbackError;
-        thrownewError(errorMessage);
+        throw new Error(errorMessage);
     }
 
     return await response.json();

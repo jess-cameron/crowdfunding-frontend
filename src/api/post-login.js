@@ -5,6 +5,8 @@ async	function	postLogin(username,	password)	{
    //so	we	set	the	Content-Type	header	to	application/json
     headers:	{
     "Content-Type":	"application/json",
+    'Authorization': 'Token  ' + userToken,
+    
     },
     body:	JSON.stringify({
     "username":	username,
