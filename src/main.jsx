@@ -8,6 +8,7 @@ import	LoginPage	from	"./pages/LoginPage.jsx";
 
 import NavBar from "./components/NavBar.jsx";
 import CreateProjectPage	from	"./pages/CreateProjectPage.jsx";
+import CreateUserPage	from	"./pages/CreateUserPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       {	path:	"/login",	element:	<LoginPage	/>	},
       { path: "/project/:id", element: <ProjectPage /> },
       {	path:	"/create-project",	element:	<CreateProjectPage />	},
+      {	path:	"/create-user",	element:	<CreateUserPage />	},
     ]
   }
 ]);

@@ -5,8 +5,11 @@ function NavBar() {
         <div>
             <nav>
                 <Link to="/">Home</Link>
-                <Link	to="/login">Log	In</Link>
-                <Link	to="/create-project">/Create Project</Link>
+                <Link   to="login">Log	In</Link>
+                <Link	to="create-project">Create Project</Link>
+                {
+                //<Link	to="create-user">Create User</Link>
+            }
             </nav>
             <Outlet />
         </div>

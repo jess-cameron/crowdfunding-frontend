@@ -1,21 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import postProject from “../api/post-project”;
-// import useAuth from “../hooks/use-auth.js”;
+import postProject from '../api/post-project';
+// import useAuth from '../hooks/use-auth.js';
 
 
 function CreateProjectForm () {
     const navigate = useNavigate();
    // const {auth, setAuth} = useAuth();
 
-    const [projectDetails, setProjectDetails] = useState ({
-        "title": title,
-        "description": description,
-        "goal": goal,
-        "image": image,
-        "true": is_open,
-        "date": date_created,
-    });
+    // const [projectDetails, setProjectDetails] = useState ({
+    //     "title": title,
+    //     "description": description,
+    //     "goal": goal,
+    //     "image": image,
+    //     "true": is_open,
+    //     "date": date_created,
+    // });
+
+    const [projectDetails, setProjectDetails] = useState ({})
 
     const handleChange = (event) => {
         const { id, value } = event.target;
@@ -40,6 +42,7 @@ function CreateProjectForm () {
                     token: response.token,
                 });
                 navigate('/');
+                //lines 40 to 43 may not be needed - double up on token creation
             });
         
     };

@@ -20,9 +20,7 @@ function	LoginForm()	{
     const	handleSubmit	=	(event)	=>	{
         event.preventDefault();
                 if	(credentials.username	&&	credentials.password)	{
-                    postLogin().then((response)	=>	{
-                        credentials.username,
-                        credentials.password
+                    postLogin(credentials.username, credentials.password).then((response)	=>	{
                         window.localStorage.setItem("token",	response.token);
                         navigate("/");
                     });
@@ -53,6 +51,9 @@ function	LoginForm()	{
             <button	type="submit"	onClick={handleSubmit}>
                 Login
             </button>
+            <div>
+                <a href="/create-user">Create New User</a>            
+            </div>
         </form>
     );
 }

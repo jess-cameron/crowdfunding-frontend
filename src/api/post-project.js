@@ -4,17 +4,17 @@ async function postProject(title, description, goal, image) {
 
     const url = `${import.meta.env.VITE_API_URL}/projects/`;
     const response = await fetch(url, {
-        method: "POST", // We neeed to tell the server that we are sending JSON data so we set the COntent Type header to application/json
+        method: "POST", // We need to tell the server that we are sending JSON data so we set the COntent Type header to application/json
         headers: {
             "Content-Type": "application/json",
-            //authentication
+            'Authorization': 'Token  ' + localStorage.getItem('token'),
         },
         body: JSON.stringify({
             "title": title,
             "description": description,
             "goal": goal,
             "image": image,
-            
+
             //is_open - user does not control this unless they have permissions
             "is_open": true,
             //date does not get passed in from the frontend - user does not control this - we define it here
