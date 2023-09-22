@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
+import CreatePledgeForm from "../components/CreatePledgeForm";
 
 function ProjectPage() {
     const { id } = useParams();
@@ -28,6 +29,7 @@ function ProjectPage() {
                     );
                 })}
             </ul>
+            <CreatePledge projectId={id} />
         </div>
     )
 }

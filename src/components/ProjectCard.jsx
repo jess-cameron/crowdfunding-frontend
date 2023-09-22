@@ -10,6 +10,11 @@ function ProjectCard(props) {
             <Link to={projectLink}>
                 <img src={projectData.image} />
                 <h3>{projectData.title}</h3>
+        <div>
+            <label htmlFor="delete">Delete project</label>
+
+        </div>        
+                
             </Link>
         </div>
     ) ;
